@@ -9,7 +9,7 @@ Feel free to contribute if you make or find something awesome.
 
 * [The Proposal (SE-XXXX)](https://github.com/apple/swift-evolution/blob/9992cf3c11c2d5e0ea20bee98657d93902d5b174/proposals/XXXX-function-builders.md)
 
-	> The proposal has not been fully implemented in the current Xcode betas, and provides a simpler transformation than specified.
+	> The proposal has not been fully implemented in the current Xcode betas, which provide a simpler transformation than specified.
 
 * [Guides](#guides)
 * Projects
