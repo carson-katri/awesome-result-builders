@@ -211,7 +211,7 @@ Lego {
 }
 ```
 
-*  [Mockingbird](https://github.com/DeclarativeHub/Mockingbird) - An experiment of implementing a UI layout and rendering framework inspired by SwiftUI
+* [Mockingbird](https://github.com/DeclarativeHub/Mockingbird) - An experiment of implementing a UI layout and rendering framework inspired by SwiftUI
 
 ```swift
 var content: some Node {
