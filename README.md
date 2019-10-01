@@ -155,6 +155,17 @@ List(dogs.identified(by: \.name)) { dog in
 }
 ```
 
+* [PathBuilder](https://github.com/mkj-is/PathBuilder) - Implementation of function builder for SwiftUI Path.
+
+```swift
+Path {
+  Move(to: CGPoint(x: 50, y: 50))
+  Line(to: CGPoint(x: 100, y: 100))
+  Line(to: CGPoint(x: 0, y: 100))
+  Close()
+}
+```
+
 * [SwiftWebUI](https://github.com/swiftwebui/SwiftWebUI) - A demo implementation of SwiftUI for the Web
 
 ```swift
@@ -200,7 +211,7 @@ Lego {
 }
 ```
 
-*  [Mockingbird](https://github.com/DeclarativeHub/Mockingbird) - An experiment of implementing a UI layout and rendering framework inspired by SwiftUI
+* [Mockingbird](https://github.com/DeclarativeHub/Mockingbird) - An experiment of implementing a UI layout and rendering framework inspired by SwiftUI
 
 ```swift
 var content: some Node {
@@ -213,6 +224,21 @@ var content: some Node {
   }
   .cornerRadius(20)
   .animation(.spring)
+}
+```
+
+* [TurtleBuilder](https://github.com/zonble/TurtleBuilder) - Turtle graphics made on the top of Swift's function builder. It allows you to use a Logo-like syntax to create and draw lines in your Swift project.
+
+```swift
+let turtle = Turtle {
+  penDown()
+  loop(9) {
+      left(140)
+      forward(30)
+      left(-100)
+      forward(30)
+  }
+  penUp()
 }
 ```
 
