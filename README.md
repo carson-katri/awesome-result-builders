@@ -155,6 +155,17 @@ List(dogs.identified(by: \.name)) { dog in
 }
 ```
 
+* [PathBuilder](https://github.com/mkj-is/PathBuilder) - Implementation of function builder for SwiftUI Path.
+
+```swift
+Path {
+  Move(to: CGPoint(x: 50, y: 50))
+  Line(to: CGPoint(x: 100, y: 100))
+  Line(to: CGPoint(x: 0, y: 100))
+  Close()
+}
+```
+
 * [SwiftWebUI](https://github.com/swiftwebui/SwiftWebUI) - A demo implementation of SwiftUI for the Web
 
 ```swift
@@ -164,17 +175,6 @@ VStack {
     .background(.green, cornerRadius: 12)
     .foregroundColor(.white)
     .tapAction(self.countUp)
-}
-```
-
-* [PathBuilder](https://github.com/mkj-is/PathBuilder) - Implementation of function builder for SwiftUI Path.
-
-```swift
-Path {
-  Move(to: CGPoint(x: 50, y: 50))
-  Line(to: CGPoint(x: 100, y: 100))
-  Line(to: CGPoint(x: 0, y: 100))
-  Close()
 }
 ```
 
