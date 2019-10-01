@@ -227,7 +227,7 @@ var content: some Node {
 }
 ```
 
-* [TurtleBuilder] - Turtle graphics made on the top of Swift's function builder. It allows you to use a Logo-like syntax to create and draw lines in your Swift project.
+* [TurtleBuilder](https://github.com/zonble/TurtleBuilder) - Turtle graphics made on the top of Swift's function builder. It allows you to use a Logo-like syntax to create and draw lines in your Swift project.
 
 ```swift
 let turtle = Turtle {
