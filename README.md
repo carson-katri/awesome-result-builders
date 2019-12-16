@@ -73,6 +73,28 @@ Schema<StarWarsAPI, StarWarsStore> {
 }
 ```
 
+* [SociableWeaver](https://github.com/NicholasBellucci/SociableWeaver) - Build declarative GraphQL queries in Swift.
+
+```swift
+Weave(.query) {
+    Object(Post.self) {
+        Field(Post.CodingKeys.title)
+
+        Object(Post.CodingKeys.author) {
+            Field(Author.CodingKeys.id)
+            Field(Author.CodingKeys.name)
+                .argument(key: "lastName", value: "Doe")
+        }
+
+        Object(Post.CodingKeys.comments) {
+            Field(Comment.CodingKeys.id)
+            Field(Comment.CodingKeys.content)
+        }
+        .argument(key: "filter", value: CommentFilter.recent)
+    }
+}
+```
+
 * ...
 
 ## HTML
