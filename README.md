@@ -166,7 +166,7 @@ NSAttributedString {
 ## REST
 * [Corvus](https://github.com/apodini/corvus) – Building RESTful APIs with a declarative syntax.
 
-```Swift
+```swift
 var api = Api {
     BasicAuthGroup<User>("login") { login }
     JWTAuthGroup<User.Payload> {
