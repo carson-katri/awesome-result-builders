@@ -17,7 +17,7 @@ Feel free to contribute if you make or find something awesome.
 	* [HTML](#html)
 	* [Networking](#networking)
 	* [NSAttributedString](#nsattributedstring)
-        * [REST]()
+	* [REST](#rest)
 	* [SwiftUI](#swiftui)
 	* [Testing](#testing)
 	* [UIKit](#uikit)
