@@ -17,7 +17,7 @@ Feel free to contribute if you make or find something awesome.
 	* [HTML](#html)
 	* [Networking](#networking)
 	* [NSAttributedString](#nsattributedstring)
-        * [REST](#rest)
+        * [REST]()
 	* [SwiftUI](#swiftui)
 	* [Testing](#testing)
 	* [UIKit](#uikit)
@@ -165,6 +165,7 @@ NSAttributedString {
 
 ## REST
 * [Corvus](https://github.com/apodini/corvus) – Building RESTful APIs with a declarative syntax.
+
 ```Swift
 var api = Api {
     BasicAuthGroup<User>("login") { login }
