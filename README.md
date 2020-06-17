@@ -17,6 +17,7 @@ Feel free to contribute if you make or find something awesome.
 	* [HTML](#html)
 	* [Networking](#networking)
 	* [NSAttributedString](#nsattributedstring)
+	* [REST](#rest)
 	* [SwiftUI](#swiftui)
 	* [Testing](#testing)
 	* [UIKit](#uikit)
@@ -157,6 +158,23 @@ NSAttributedString {
   AText("with Swift")
      .font(.systemFont(ofSize: 20))
      .foregroundColor(.orange)
+}
+```
+
+* ...
+
+## REST
+* [Corvus](https://github.com/apodini/corvus) – Building RESTful APIs with a declarative syntax.
+
+```swift
+var api = Api {
+    BasicAuthGroup<User>("login") { login }
+    JWTAuthGroup<User.Payload> {
+        Group("users") { users }
+        Group("inventory") {
+            Group("articles") { articles }
+        }
+    }
 }
 ```
 
