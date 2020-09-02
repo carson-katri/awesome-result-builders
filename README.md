@@ -1,7 +1,7 @@
 # awesome-function-builders
 A list of cool DSLs made with Swift 5.1’s `@functionBuilder`
 
-> Currently, you instead have to use `@_functionBuilder` as it is a private implementation. This will change in the future, however.  
+> Currently, you instead have to use `@_functionBuilder` as it is a private implementation. This will change in the future, however.
 
 Feel free to contribute if you make or find something awesome.
 
@@ -13,6 +13,7 @@ Feel free to contribute if you make or find something awesome.
 
 * [Guides](#guides)
 * Projects
+	* [DependencyInjection](#dependencyinjection)
 	* [GraphQL](#graphql)
 	* [HTML](#html)
 	* [Networking](#networking)
@@ -30,6 +31,17 @@ A list of helpful guides/tutorials on function builders
 * [Inside SwiftUI's Declarative Syntax's Compiler Magic](https://swiftrocks.com/inside-swiftui-compiler-magic.html?source=post_page---------------------------)
 * [The Swift 5.1 features that power SwiftUI’s API](https://www.swiftbysundell.com/posts/the-swift-51-features-that-power-swiftuis-api#function-builders)
 * [Create Your First Function Builder in 10 Minutes](https://link.medium.com/8jxUOvuXLY)
+
+## DependencyInjection
+* [DependencyInjection](https://github.com/sebastianpixel/DependencyInjection) - Dependency injection with function builders and property wrappers
+
+```swift
+DIContainer.register {
+  New(MediaPlayer() as MediaplayerProtocol)
+  New { _, id in ArticleViewModel(id: id) as PageViewModelProtocol }
+  Shared(Router.init, as: RouterProtocol.self, DeeplinkHandler.self)
+}
+```
 
 ## GraphQL
 * [Artemis](https://github.com/Saelyria/Artemis) - Interact with GraphQL in Swift - not strings
