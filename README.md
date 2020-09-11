@@ -13,7 +13,7 @@ Feel free to contribute if you make or find something awesome.
 
 * [Guides](#guides)
 * Projects
-	* [DependencyInjection](#dependencyinjection)
+	* [Dependency Injection](#dependency-injection)
 	* [GraphQL](#graphql)
 	* [HTML](#html)
 	* [Networking](#networking)
@@ -32,7 +32,7 @@ A list of helpful guides/tutorials on function builders
 * [The Swift 5.1 features that power SwiftUI’s API](https://www.swiftbysundell.com/posts/the-swift-51-features-that-power-swiftuis-api#function-builders)
 * [Create Your First Function Builder in 10 Minutes](https://link.medium.com/8jxUOvuXLY)
 
-## DependencyInjection
+## Dependency Injection
 * [DependencyInjection](https://github.com/sebastianpixel/DependencyInjection) - Dependency injection with function builders and property wrappers
 
 ```swift
