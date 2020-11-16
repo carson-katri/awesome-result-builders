@@ -315,4 +315,40 @@ let turtle = Turtle {
 * ...
 
 ## Other
+* [Pappe](https://github.com/frameworklabs/Pappe) - A Proof of concept embedded interpreted synchronous DSL for Swift.
+
+```swift
+let m = Module { name in
+    activity (name.Wait, [name.ticks]) { val in
+        exec { val.i = val.ticks as Int }
+        whileRepeat(val.i > 0) {
+            exec { val.i -= 1 }
+            await { true }
+        }
+    }
+    activity (name.Main, []) { val in
+        cobegin {
+            strong {
+                doRun(name.Wait, [10])
+            }
+            weak {
+                loop {
+                    doRun(name.Wait, [2])
+                    exec { print("on every third") }
+                    await { true }
+                }
+            }
+            weak {
+                loop {
+                    doRun(name.Wait, [1])
+                    exec { print("on every second") }
+                    await { true }
+                }
+            }
+        }
+        exec { print("done") }
+    }
+}
+```
+
 * ...
