@@ -253,6 +253,20 @@ struct EnumerationView<Content: Sequence>: View where Content.Element: View {
         }
     }
 }
+
+// Usage:
+EnumerationView {
+  Text("Some text")
+  VStack {
+    ForEach(0..<10, id: \.self) { _ in
+      Text("Lorem ipsum dolet.")
+    }
+  }
+  HStack {
+    Text("With image:")
+    Image(systemName: "checkmark")
+  }
+}
 ```
 
 ## Testing
