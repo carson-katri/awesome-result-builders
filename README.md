@@ -352,6 +352,35 @@ let turtle = Turtle {
 
 * ...
 
+## AppKit
+* [MenuBuilder](https://github.com/j-f1/MenuBuilder) - A convenient way to create menus.
+```swift
+let menu = NSMenu {
+  MenuItem("Click me")
+    .onSelect { print("clicked!") } 
+  MenuItem("Item with a view")
+    .view {
+      MyMenuItemView() // any SwiftUI view
+    }
+  SeparatorItem()
+  MenuItem("About") {
+    // rendered as disabled items in a submenu
+    MenuItem("Version 1.2.3")
+    MenuItem("Copyright 2021")
+  }
+  MenuItem("Quit")
+    .shortcut("q")
+    .onSelect { NSApp.terminate(nil) }
+}
+
+// later, to replace the menu items with different/updated ones:
+menu.replaceItems {
+  MenuItem("New Item").onSelect { print("Hello!") }
+}
+```
+
+* ...
+
 ## Other
 * [Pappe](https://github.com/frameworklabs/Pappe) - A Proof of concept embedded interpreted synchronous DSL for Swift.
 
