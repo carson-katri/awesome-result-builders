@@ -231,6 +231,44 @@ VStack {
 }
 ```
 
+* [SequenceBuilder](https://github.com/andtie/SequenceBuilder) - Allows you to build arbitrary heterogenous sequences without loosing information about the underlying types. It is especially useful for building custom container views in SwiftUI.
+
+```swift
+struct EnumerationView<Content: Sequence>: View where Content.Element: View {
+
+    let content: Content
+
+    init(@SequenceBuilder builder: () -> Content) {
+        self.content = builder()
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            ForEach(sequence: content) { (index, content) in
+                HStack(alignment: .top) {
+                    Text("\(index + 1). ")
+                    content
+                }
+            }
+        }
+    }
+}
+
+// Usage:
+EnumerationView {
+  Text("Some text")
+  VStack {
+    ForEach(0..<10, id: \.self) { _ in
+      Text("Lorem ipsum dolet.")
+    }
+  }
+  HStack {
+    Text("With image:")
+    Image(systemName: "checkmark")
+  }
+}
+```
+
 ## Testing
 
 * [Rorschach](https://github.com/q231950/rorschach) - Write Xcode UI Tests BDD style 🤷🏻‍♂️
