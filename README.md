@@ -288,6 +288,18 @@ expect(in: &context) {
 }
 ```
 
+* [SwiftValidation](SwiftValidation) – Declarative way to validate our object.
+
+```swift
+try validate(user) {
+    validate(\.id).isPositive()
+    validate(\.email) {
+        isNotEmpty()
+        isEmail()
+    }
+}
+```
+
 ## UIKit
 * [BoxLayout](https://github.com/muukii/BoxLayout) - [WIP] SwiftUI's interface like AutoLayout DSL
 
