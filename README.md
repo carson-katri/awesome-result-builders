@@ -269,6 +269,37 @@ EnumerationView {
 }
 ```
 
+* [ComposableNavigator](https://github.com/Bahn-X/swift-composable-navigator) - The **ComposableNavigator** is based on the concept of PathBuilder composition in form of a NavigationTree. A NavigationTree composes PathBuilders to describe all valid navigation paths in an application. That also means that all screens in our application are accessible via a pre-defined navigation path.
+
+```swift
+struct AppNavigationTree: NavigationTree {
+  let homeViewModel: HomeViewModel
+  let detailViewModel: DetailViewModel
+  let settingsViewModel: SettingsViewModel
+
+  var builder: some PathBuilder {
+    Screen(
+      HomeScreen.self,
+      content: {
+        HomeView(viewModel: homeViewModel)
+      },
+      nesting: {
+        DetailScreen.Builder(viewModel: detailViewModel),
+        SettingsScreen.Builder(viewModel: settingsViewModel)
+      }
+    )
+  }
+}
+```
+Based on `AppNavigationTree`, the following navigation paths are valid:
+```
+  /home
+  /home/detail?id=0
+  /home/settings
+```
+
+More information on the `NavigationTree` and how to compose `PathBuilder`s can be found [here](https://github.com/Bahn-X/swift-composable-navigator/wiki/NavigationTree).
+
 ## Testing
 
 * [Rorschach](https://github.com/q231950/rorschach) - Write Xcode UI Tests BDD style 🤷🏻‍♂️
