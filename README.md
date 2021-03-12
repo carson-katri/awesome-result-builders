@@ -20,10 +20,10 @@ Feel free to contribute if you make or find something awesome.
 	* [NSAttributedString](#nsattributedstring)
 	* [REST](#rest)
   * [Server-Side](#server-side)
-	* [SwiftUI](#swiftui)
-	* [Testing](#testing)
-	* [UIKit](#uikit)
-	* [Other](#other)
+  * [SwiftUI](#swiftui)
+  * [Testing](#testing)
+  * [UIKit](#uikit)
+  * [Other](#other)
 
 ## Guides
 A list of helpful guides/tutorials on function builders
