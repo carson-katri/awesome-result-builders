@@ -19,10 +19,11 @@ Feel free to contribute if you make or find something awesome.
 	* [Networking](#networking)
 	* [NSAttributedString](#nsattributedstring)
 	* [REST](#rest)
-	* [SwiftUI](#swiftui)
-	* [Testing](#testing)
-	* [UIKit](#uikit)
-	* [Other](#other)
+  * [Server-Side](#server-side)
+  * [SwiftUI](#swiftui)
+  * [Testing](#testing)
+  * [UIKit](#uikit)
+  * [Other](#other)
 
 ## Guides
 A list of helpful guides/tutorials on function builders
@@ -136,8 +137,26 @@ html {
 }
 ```
 
-* ...
+* [HyperSwift](https://github.com/johngarrett/HyperSwift) - A Swift DSL for generating HTML and CSS documents
 
+```swift
+VStack(justify: .center, align: .center) {
+  HStack(justify: .spaceEvenly, align: .center) {
+    Image(url: "/images/error_bomb.png")
+      .width(100)
+      .height(100)
+    Header(.header3) { "HTTP 500" }
+      .font(weight: "bold", size: 40, family: "SF Mono")
+  }          
+  Paragraph(fiveOfiveMessage)
+}
+.backgroundColor(GColors.lightRed)
+.textAlign(.center)
+.margin(5, .percent)
+.display(.flex)
+.shadow(x: 20, y: 30, color: GColors.cardShadow)
+.border(width: 1, color: .black)
+```
 
 ## Networking
 *  [swift-request](https://github.com/carson-katri/swift-request) - Declarative HTTP networking, designed for SwiftUI
@@ -191,6 +210,51 @@ var api = Api {
 ```
 
 * ...
+
+## Server-Side
+* [MacroApp](https://github.com/Macro-swift/MacroApp) - A SwiftUI-like, declarative way to setup endpoints for the [MacroExpress](https://github.com/Macro-swift/MacroExpress) SwiftNIO based web framework framework
+
+```swift
+@main
+struct HelloWorld: App {
+  
+  var body: some Endpoints {
+    Use(logger("dev"), bodyParser.urlencoded())
+          
+    Route("/admin") {
+      Get("/view") { req, res, _ in res.render("admin-index.html") }
+      Render("help", template: "help")
+    }
+      
+    Get { req, res, next in
+      res.render("index.html")
+    }
+  }
+}
+```
+
+* [Meridian](https://github.com/khanlou/Meridian) - A web server written in Swift that lets you write your endpoints in a declarative way
+
+```swift
+struct SampleEndpoint: Responder {
+    @QueryParameter("sort_direction") 
+    var sortDirection: SortDirection = .ascending
+    
+    @URLParameter(\.id) var userID
+    @EnivronmentObject var database: Database
+    
+    func body() throws {
+        JSON(database.fetchFollowers(of: userID, sortDirection: sortDirection))
+    }
+}
+
+Server(errorRenderer: BasicErrorRenderer()).register {
+  SampleEndpoint()
+      .on("/api/users/\(\.id))/followers")
+}
+.environmentObject(Database())
+.listen()
+```
 
 ## SwiftUI
 * [ControlFlowUI](https://github.com/Karumi/ControlFlowUI) - A library that add control flow functionality to SwitUI, using the power of `@functionBuilder` and `ViewBuilder`
@@ -266,6 +330,30 @@ EnumerationView {
     Text("With image:")
     Image(systemName: "checkmark")
   }
+}
+```
+
+* [SwiftDB](https://github.com/vmanot/SwiftDB) - A type-safe, SwiftUI-inspired wrapper around CoreData
+
+```swift
+// Define an Entity:
+
+struct Foo: Entity, Identifiable {
+    @Attribute var bar: String = "Untitled"
+    
+    var id: some Hashable {
+        bar
+    }
+}
+
+// Define a Schema:
+
+struct MySchema: Schema {
+    var entities: Entities {
+        Foo.self
+        Bar.self
+        Baz.self
+    }
 }
 ```
 
