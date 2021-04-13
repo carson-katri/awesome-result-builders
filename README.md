@@ -481,6 +481,21 @@ let turtle = Turtle {
 }
 ```
 
+* [FlooidLayout](https://github.com/martin-lalev/FlooidLayout) - Setup autolayout constraints in a declerative way
+
+```swift
+image.constraints { view in
+    view.centerXAnchor == container.centerXAnchor
+    view.topAnchor == container.topAnchor + 20
+    view.widthAnchor == container.widthAnchor -- 20
+    view.heightAnchor == view.widthAnchor * 0.6
+}
+icon.constraints { view in
+    view.centerAnchor == iconContainer.centerAnchor
+    view.sizeAnchor == CGSize(width: 20, height: 20)
+}
+```
+
 * ...
 
 ## AppKit
