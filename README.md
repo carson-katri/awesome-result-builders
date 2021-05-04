@@ -407,7 +407,7 @@ expect(in: &context) {
 }
 ```
 
-* [SwiftValidation](SwiftValidation) – Declarative way to validate our object.
+* [SwiftValidation](https://github.com/artbobrov/SwiftValidation) – Declarative way to validate our object.
 
 ```swift
 try validate(user) {
