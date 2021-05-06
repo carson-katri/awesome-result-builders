@@ -1,15 +1,13 @@
-# awesome-function-builders
-A list of cool DSLs made with Swift 5.1’s `@functionBuilder`
+# awesome-result-builders
+A list of cool DSLs made with Swift 5.4’s `@resultBuilder`
 
-> Currently, you instead have to use `@_functionBuilder` as it is a private implementation. This will change in the future, however.
+> As of Swift 5.4, `functionBuilder` has been [renamed to `resultBuilder`](https://github.com/apple/swift-evolution/blob/main/proposals/0289-result-builders.md#changes-from-the-first-revision)
 
 Feel free to contribute if you make or find something awesome.
 
 ## Contents
 
-* [The Proposal (SE-XXXX)](https://github.com/apple/swift-evolution/blob/9992cf3c11c2d5e0ea20bee98657d93902d5b174/proposals/XXXX-function-builders.md)
-
-	> The proposal has not been fully implemented in the current Xcode betas, which provide a simpler transformation than specified.
+* [The Proposal (SE-0289)](https://github.com/apple/swift-evolution/blob/main/proposals/0289-result-builders.md)
 
 * [Guides](#guides)
 * Projects
@@ -26,10 +24,10 @@ Feel free to contribute if you make or find something awesome.
   * [Other](#other)
 
 ## Guides
-A list of helpful guides/tutorials on function builders
+A list of helpful guides/tutorials on result builders
 
 * [Crash course in Swift's 'function builders' with SwiftUI](https://blog.vihan.org/swift-function-builders/)
-* [Inside SwiftUI's Declarative Syntax's Compiler Magic](https://swiftrocks.com/inside-swiftui-compiler-magic.html?source=post_page---------------------------)
+* [Inside SwiftUI's Declarative Syntax's Compiler Magic](https://swiftrocks.com/inside-swiftui-compiler-magic.html)
 * [The Swift 5.1 features that power SwiftUI’s API](https://www.swiftbysundell.com/posts/the-swift-51-features-that-power-swiftuis-api#function-builders)
 * [Create Your First Function Builder in 10 Minutes](https://link.medium.com/8jxUOvuXLY)
 
