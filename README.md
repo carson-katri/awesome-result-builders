@@ -160,28 +160,28 @@ VStack(justify: .center, align: .center) {
 
 ```swift
 struct IndexPage: HTML {
-    var body: some HTMLConvertible {
-        Root(language: .en) {
-            Body {
-                Group {
-                    Text("Welcome to Mongrel!")
-                        .heading(.h1)
+  var body: some HTMLConvertible {
+    Root(language: .en) {
+      Body {
+        Group {
+          Text("Welcome to Mongrel!")
+            .heading(.h1)
 
-                    Text("A Swift and HTML hybrid supporting:")
+          Text("A Swift and HTML hybrid supporting:")
 
-                    List(.unordered) {
-                        Text("CSS")
-                            .paragraph()
+          List(.unordered) {
+            Text("CSS")
+              .paragraph()
 
-                        Text("Javascript")
-                            .paragraph()
-                    }
-                    .class("list")
-                }
-            }
-            .id("main-body")
+            Text("Javascript")
+              .paragraph()
+          }
+          .class("list")
         }
+      }
+      .id("main-body")
     }
+  }
 }
 ```
 
