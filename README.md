@@ -156,6 +156,35 @@ VStack(justify: .center, align: .center) {
 .border(width: 1, color: .black)
 ```
 
+* [Mongrel](https://github.com/NicholasBellucci/Mongrel) - Build declarative HTML in Swift.
+
+```swift
+struct IndexPage: HTML {
+  var body: some HTMLConvertible {
+    Root(language: .en) {
+      Body {
+        Group {
+          Text("Welcome to Mongrel!")
+            .heading(.h1)
+
+          Text("A Swift and HTML hybrid supporting:")
+
+          List(.unordered) {
+            Text("CSS")
+              .paragraph()
+
+            Text("Javascript")
+              .paragraph()
+          }
+          .class("list")
+        }
+      }
+      .id("main-body")
+    }
+  }
+}
+```
+
 ## Networking
 *  [swift-request](https://github.com/carson-katri/swift-request) - Declarative HTTP networking, designed for SwiftUI
 
