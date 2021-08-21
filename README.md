@@ -185,6 +185,56 @@ struct IndexPage: HTML {
 }
 ```
 
+* [Swep](https://github.com/Alja7dali/swift-web-page) - Writing type-safe HTML/CSS declaratively.
+
+```swift
+let titillimFont: StaticString = """
+  https://fonts.googleapis.com/css2?family=\
+  Titillium+Web:ital,wght@0,200;0,300;0,400;\
+  0,600;0,700;0,900;1,200;1,300;1,400;1,600;\
+  1,700&display=swap
+  """
+let page = document {
+  html {
+    head {
+      title("Hello, Swep!")
+      style {
+        `import`(titillimFont)
+        selector("*, *::before, *::after") {
+          margin(0)
+          padding(0)
+        }
+        selector("body") {
+          margin(0, .auto)
+          backgroundColor(.hex(0x111))
+          fontFamily("'Titillium Web', sans-serif")
+        }
+      }
+    }
+    body {
+      h1("📄 swift-web-page (swep)")
+      ul {
+        li("Write html documents along with css")
+          .fontWeight(.bolder)
+        li("Bring all swift-language features out of the box")
+        #if swift(>=5.1)
+          for version in 1...4 {
+            if version != 2 {
+              li("supporting swift v5.\(version)")
+            }
+          }
+        #endif
+      }
+      blockquote("Enjoy! ✌️😁")
+    }
+  }
+}
+
+//print(page.render())
+```
+
+* ...
+
 ## Networking
 *  [swift-request](https://github.com/carson-katri/swift-request) - Declarative HTTP networking, designed for SwiftUI
 
