@@ -229,8 +229,6 @@ let page = document {
     }
   }
 }
-
-//print(page.render())
 ```
 
 * ...
