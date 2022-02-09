@@ -11,7 +11,7 @@ Feel free to contribute if you make or find something awesome.
 
 * [Guides](#guides)
 * Projects
-	* [BitWiser](#bitwiser)
+	* [Data](#data)
 	* [Dependency Injection](#dependency-injection)
 	* [GraphQL](#graphql)
 	* [HTML](#html)
