@@ -32,7 +32,7 @@ A list of helpful guides/tutorials on result builders
 * [The Swift 5.1 features that power SwiftUI’s API](https://www.swiftbysundell.com/posts/the-swift-51-features-that-power-swiftuis-api#function-builders)
 * [Create Your First Function Builder in 10 Minutes](https://link.medium.com/8jxUOvuXLY)
 
-## BitWiser
+## Data
 * [BitWiser](https://github.com/DrAma999/BitWiser) - A simple library to help you in dealing with bytes, bits, nibbles and Data
 
 ```swift
