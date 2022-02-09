@@ -37,23 +37,23 @@ A list of helpful guides/tutorials on result builders
 
 ```swift
 Data {
-        [UInt8(0)]
-        UInt8(1)
-        Int8(2)
-        "\u{03}"
-        Int16(1284)
-        if dataClause {
-            CustomData()
-        }
-    }
+  [UInt8(0)]
+  UInt8(1)
+  Int8(2)
+  "\u{03}"
+  Int16(1284)
+  if dataClause {
+    CustomData()
+  }
+}
     
 Array<Byte> {
-            0b1010_1010
-            0b1100_1100
-            UInt8(32)
-            [0x05, 0x06]
-            Byte(0x01)
-        }
+  0b1010_1010
+  0b1100_1100
+  UInt8(32)
+  [0x05, 0x06]
+  Byte(0x01)
+}
 ```
 
 ## Dependency Injection
