@@ -11,6 +11,7 @@ Feel free to contribute if you make or find something awesome.
 
 * [Guides](#guides)
 * Projects
+	* [Data](#data)
 	* [Dependency Injection](#dependency-injection)
 	* [GraphQL](#graphql)
 	* [HTML](#html)
@@ -30,6 +31,30 @@ A list of helpful guides/tutorials on result builders
 * [Inside SwiftUI's Declarative Syntax's Compiler Magic](https://swiftrocks.com/inside-swiftui-compiler-magic.html)
 * [The Swift 5.1 features that power SwiftUI’s API](https://www.swiftbysundell.com/posts/the-swift-51-features-that-power-swiftuis-api#function-builders)
 * [Create Your First Function Builder in 10 Minutes](https://link.medium.com/8jxUOvuXLY)
+
+## Data
+* [BitWiser](https://github.com/DrAma999/BitWiser) - A simple library to help you in dealing with bytes, bits, nibbles and Data
+
+```swift
+Data {
+  [UInt8(0)]
+  UInt8(1)
+  Int8(2)
+  "\u{03}"
+  Int16(1284)
+  if dataClause {
+    CustomData()
+  }
+}
+    
+Array<Byte> {
+  0b1010_1010
+  0b1100_1100
+  UInt8(32)
+  [0x05, 0x06]
+  Byte(0x01)
+}
+```
 
 ## Dependency Injection
 * [DependencyInjection](https://github.com/sebastianpixel/DependencyInjection) - Dependency injection with function builders and property wrappers
