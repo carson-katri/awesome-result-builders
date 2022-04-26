@@ -700,3 +700,49 @@ struct UserSourceFile: SourceFile {
     }
 }
 ```
+
+* [Narratore](https://github.com/broomburgo/Narratore) - A library to generate interactive stories and narrative games, that uses a DSL to write the story.
+
+```swift
+import Narratore
+
+struct MyFirstScene: Scene {
+  typealias Game = MyGame
+  
+  static let branches: [RawBranch<MyGame>] = [
+    Main.raw,
+  ]
+  
+  enum Main: Branch {
+    typealias Anchor = String
+
+    @BranchBuilder<Self>
+    static func getSteps(for _: MyFirstScene) -> [BranchStep<Self>] {
+      "Welcome"
+      
+      "This is your new game, built with narratore".with(tags: [.init("Let's play some sound effect!")])
+      
+      check {
+        if $0.world.isEnjoyable {
+          "Enjoy!"
+        }
+      }
+      
+      "Now choose".with(anchor: "We could jump right here from anywhere")
+      
+      choose { _ in
+        "Go to second scene, main path".onSelect {
+          "Let's go to the second scene!"
+            .with(id: "We can keep track of this message")
+            .then(.transitionTo(MySecondScene.init(magicNumber: 42)))
+        }
+
+        "Go to second scene, alternate path".onSelect {
+          "Going to the alternate path of the second scene"
+            .then(.transitionTo(MySecondScene.Other.self, scene: .init(magicNumber: 43)))
+        }
+      }
+    }
+  }
+}
+```
