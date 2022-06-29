@@ -490,19 +490,18 @@ More information on the `NavigationTree` and how to compose `PathBuilder`s can b
 
 ## Testing
 
-* [Rorschach](https://github.com/q231950/rorschach) - Write Xcode UI Tests BDD style 🤷🏻‍♂️
+* [Rorschach](https://github.com/q231950/rorschach) - Write XCTest tests in BDD style 🤷🏻‍♂️
 
 ```swift
-expect(in: &context) {
-  Given {
-    ILearnABitMore()
-    IBuildARocket()
+expect {
+  Given("I have a universe without any stars") {
+      universe.numberOfStars = 0
   }
-  When {
-    ILaunchARocket()
+  When("I add a couple of stars") {
+      universe.numberOfStars = 23
   }
-  Then {
-    ICanSeeTheStars()
+  Then("I can see the stars I have added ✨") {
+      XCTAssertEqual(universe.numberOfStars, 23)
   }
 }
 ```
