@@ -15,14 +15,15 @@ Feel free to contribute if you make or find something awesome.
 	* [Dependency Injection](#dependency-injection)
 	* [GraphQL](#graphql)
 	* [HTML](#html)
+	* [HTML Parser](#html-parser)
 	* [Networking](#networking)
 	* [NSAttributedString](#nsattributedstring)
 	* [REST](#rest)
-  * [Server-Side](#server-side)
-  * [SwiftUI](#swiftui)
-  * [Testing](#testing)
-  * [UIKit](#uikit)
-  * [Other](#other)
+    * [Server-Side](#server-side)
+    * [SwiftUI](#swiftui)
+    * [Testing](#testing)
+    * [UIKit](#uikit)
+    * [Other](#other)
 
 ## Guides
 A list of helpful guides/tutorials on result builders
@@ -258,6 +259,29 @@ let page = document {
 
 * ...
 
+## HTML Parser
+* [HTMLParserBuilder](https://github.com/danny1113/html-parser-builder) - Build your HTML parser with declarative syntax and strongly-typed result.
+
+```swift
+struct Group {
+    let h1: String
+    let h2: String
+}
+
+let capture = HTML {
+    Capture("#group h1", transform: \.textContent)
+    Capture("#group h2", transform: \.textContent)
+    
+} transform: { (output: (String, String)) -> Group in
+    return Group(
+        h1: output.0,
+        h2: output.1
+    )
+} // => HTML<Group>
+```
+
+* ...
+
 ## Networking
 *  [swift-request](https://github.com/carson-katri/swift-request) - Declarative HTTP networking, designed for SwiftUI
 
@@ -355,6 +379,25 @@ Server(errorRenderer: BasicErrorRenderer()).register {
 .environmentObject(Database())
 .listen()
 ```
+
+* [VaporDSL](https://github.com/danny1113/vapor-dsl) - Declarative, structured syntax for Vapor.
+
+```swift
+Group("api") {
+    // GET /api/
+    Route(use: index)
+    
+    // GET /api/todos
+    Route("todos") { req in
+        return req.view.render("todos")
+    }
+
+    // POST /api/todos
+    Route("todos", on: .POST, use: todo)
+}
+```
+
+* ...
 
 ## SwiftUI
 * [ControlFlowUI](https://github.com/Karumi/ControlFlowUI) - A library that add control flow functionality to SwitUI, using the power of `@functionBuilder` and `ViewBuilder`
