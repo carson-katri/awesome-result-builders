@@ -15,7 +15,7 @@ Feel free to contribute if you make or find something awesome.
 	* [Dependency Injection](#dependency-injection)
 	* [GraphQL](#graphql)
 	* [HTML](#html)
-	* [Parsing](#parsing)
+	* [Parsing/Decoding](#parsing-and-decoding)
 	* [Networking](#networking)
 	* [NSAttributedString](#nsattributedstring)
 	* [REST](#rest)
@@ -259,7 +259,7 @@ let page = document {
 
 * ...
 
-## Parsing
+## Parsing and Decoding
 * [HTMLParserBuilder](https://github.com/danny1113/html-parser-builder) - Build your HTML parser with declarative syntax and strongly-typed result.
 
 ```swift
@@ -278,6 +278,46 @@ let capture = HTML {
         h2: output.1
     )
 } // => HTML<Group>
+```
+
+* [DeepCodable](https://github.com/MPLew-is/deep-codable) - Encode and decode deeply-nested data into flat Swift objects
+
+```swift
+struct SomeObject: DeepCodable {
+    static let codingTree = CodingTree {
+        Key("a", "b", "c") {
+            Key("d1", "e1", containing: \._e1)
+            Key("d2", "e2", "f2", containing: \._f2)
+        }
+    }
+    
+    @Value var e1: String
+    @Value var f2: String
+}
+
+let json = """
+    {
+        "a": {
+            "b": {
+                "c": {
+                    "d1": {
+                        "e1": "Some value"
+                    },
+                    "d2": {
+                        "e2": {
+                            "f2": "Other value"
+                        }
+                    }
+                }
+            }
+        }
+    }
+    """
+let jsonData = json.data(using: .utf8)!
+
+let object = try JSONDecoder().decode(SomeObject.self, from: jsonData)
+print(object.e1) // "Some value"
+print(object.f2) // "Other value"
 ```
 
 * ...
