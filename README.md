@@ -299,6 +299,46 @@ let capture = HTML {
 } // => HTML<Group>
 ```
 
+* [DeepCodable](https://github.com/MPLew-is/deep-codable) - Encode and decode deeply-nested data into flat Swift objects
+
+```swift
+struct SomeObject: DeepCodable {
+    static let codingTree = CodingTree {
+        Key("a", "b", "c") {
+            Key("d1", "e1", containing: \._e1)
+            Key("d2", "e2", "f2", containing: \._f2)
+        }
+    }
+    
+    @Value var e1: String
+    @Value var f2: String
+}
+
+let json = """
+    {
+        "a": {
+            "b": {
+                "c": {
+                    "d1": {
+                        "e1": "Some value"
+                    },
+                    "d2": {
+                        "e2": {
+                            "f2": "Other value"
+                        }
+                    }
+                }
+            }
+        }
+    }
+    """
+let jsonData = json.data(using: .utf8)!
+
+let object = try JSONDecoder().decode(SomeObject.self, from: jsonData)
+print(object.e1) // "Some value"
+print(object.f2) // "Other value"
+```
+
 * ...
 
 ## Networking
