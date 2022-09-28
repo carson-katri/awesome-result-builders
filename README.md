@@ -15,7 +15,7 @@ Feel free to contribute if you make or find something awesome.
 	* [Dependency Injection](#dependency-injection)
 	* [GraphQL](#graphql)
 	* [HTML](#html)
-	* [Parsing/Decoding](#parsing-and-decoding)
+	* [Parsing](#parsing)
 	* [Networking](#networking)
 	* [NSAttributedString](#nsattributedstring)
 	* [REST](#rest)
@@ -259,7 +259,7 @@ let page = document {
 
 * ...
 
-## Parsing and Decoding
+## Parsing
 * [HTMLParserBuilder](https://github.com/danny1113/html-parser-builder) - Build your HTML parser with declarative syntax and strongly-typed result.
 
 ```swift
