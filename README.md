@@ -57,6 +57,25 @@ Array<Byte> {
 }
 ```
 
+* [BoolBuilder](https://github.com/ApolloZhu/BoolBuilder) - Build complex Bool values in an easy to understasnd way while perserving short-circuit semantics and exception handling capabilities
+
+```swift
+let condition: Bool = all {
+    any {
+        conditionA
+        conditionB
+            .inverted
+
+        either {
+            conditionC
+        } or: {
+            conditionD
+        }
+    }
+    conditionE
+}
+```
+
 ## Dependency Injection
 * [DependencyInjection](https://github.com/sebastianpixel/DependencyInjection) - Dependency injection with function builders and property wrappers
 
